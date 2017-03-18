@@ -16,5 +16,6 @@
 </script>
 
 <style lang="stylus" scoped>
-
+  v-ons-page
+    color: red
 </style>
