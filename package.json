@@ -1,7 +1,7 @@
 {
   "scripts": {
     "dev": "node config/dev-server.js",
-    "build": "webpack -p --color --progress --config config/webpack.prod.conf.js"
+    "build": "rm -rf ./dist && webpack -p --color --progress --config config/webpack.prod.conf.js"
   },
   "dependencies": {
     "babel-eslint": "^7.1.1",

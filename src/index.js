@@ -4,18 +4,17 @@ import 'onsenui/css/onsen-css-components.css'
 
 // JS import
 import Vue from 'vue'
-import 'onsenui'
+import OnsenUI from 'onsenui'
+OnsenUI.disableAutoStyling()
 import VueOnsen from 'vue-onsenui'
 
 import './main'
-import Home from './pages/Home'
+import Root from './pages/root'
 
 Vue.use(VueOnsen)
 
 new Vue({
-  components: { Home },
+  components: { Root },
   el: '#app',
-  template: '<Home />'
+  template: '<Root />'
 })
-
-window.console.log(new Date().getTime(), 'h')
