@@ -1,30 +1,43 @@
 <template>
   <v-ons-page>
-    <toolbar>Page 1</toolbar>
     <p style="text-align: center">
-      <v-ons-button modifier="large" @click="$ons.notification.alert('Hello World!')">Click</v-ons-button>
-      <v-ons-button modifier="cta" @click="push">Push</v-ons-button>
+      <div>(page)</div>
+      <v-ons-button modifier="large" @click="alertClick">Alert Click</v-ons-button>
+      <v-ons-button modifier="cta" @click="toPage('reserve')">Goto Reserve</v-ons-button>
+    </p>
+    <p>
+      <div class="money">{{ someVal | currency }} (filter)</div>
+      <input class="input" type="text" v-model="someVal" placeholder="Just number (directive)" v-regex-input>
     </p>
   </v-ons-page>
 </template>
 
 <script>
-  import { Toolbar } from '../directive'
-  import Detail from './detail'
-
   export default {
     name: 'home',
-    props: ['pageStack'],
-    components: {
-      Toolbar
+    data () {
+      return {
+        someVal: null
+      }
     },
     methods: {
-      push () {
-        this.pageStack.push(Detail)
+      toPage (name) {
+        this.$router.push({ name })
+      },
+      alertClick () {
+        this.$ons.notification.alert('Hello World!')
       }
     }
   }
 </script>
 
 <style lang="stylus" scoped>
+  .input
+    border: 1px solid #ddd
+    font-size: 1.5rem
+    line-height: 2rem
+    margin: 3px
+    padding: 2px 5px
+  .money
+    color: green
 </style>

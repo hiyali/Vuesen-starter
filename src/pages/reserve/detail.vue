@@ -6,7 +6,7 @@
 </template>
 
 <script>
-  import { Toolbar } from '../directive'
+  import { Toolbar } from '../../components'
 
   export default {
     name: 'detail',

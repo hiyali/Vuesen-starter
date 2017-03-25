@@ -1,20 +1,26 @@
-// Webpack CSS import
-import 'onsenui/css/onsenui.css'
-import 'onsenui/css/onsen-css-components.css'
-
-// JS import
+// Main import
 import Vue from 'vue'
-import OnsenUI from 'onsenui'
-OnsenUI.disableAutoStyling()
-import VueOnsen from 'vue-onsenui'
 
-import './main'
-import Root from './pages/root'
+// Import libs / directives / filters
+import './lib'
+import './directives'
+import './filters'
 
-Vue.use(VueOnsen)
+// Custom style
+import './assets/style'
 
+// Router / Store
+import router from './router'
+import store from './store'
+import { sync } from 'vuex-router-sync'
+sync(store, router)
+
+// Root render
 new Vue({
-  components: { Root },
   el: '#app',
-  template: '<Root />'
+  router,
+  store,
+  render: h => h(
+		Vue.extend({ template: '<router-view />' })
+	)
 })

@@ -8,8 +8,7 @@
   import Home from './home'
 
   export default {
-    name: 'root',
-    props: ['Home'],
+    name: 'reserve-navigation',
     components: {
       Home
     },
