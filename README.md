@@ -1,12 +1,9 @@
 # Vuesen-starter
 ❤️ A OnsenUI with Vuejs starter
 
-1. OnsenUI
-2. Vuejs 2
-3. Webpack 2
-4. ESLint
-5. ES6
-6. Stylus
+1. Vuejs 2 (router / store / resouce / filter / directive ...)
+2. OnsenUI
+3. Webpack 2 (ESLint / ES6 / Stylus / Middlewares ...)
 
 Just enjoy.
 
