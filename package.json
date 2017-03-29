@@ -1,7 +1,7 @@
 {
   "scripts": {
     "dev": "node config/dev-server.js",
-    "build": "node config/build.js --production"
+    "build": "node config/build.js"
   },
   "dependencies": {
     "onsenui": "^2.2.0",
@@ -49,7 +49,6 @@
     "http-proxy-middleware": "^0.17.4",
     "opn": "^4.0.2",
     "ora": "^1.2.0",
-    "postcss-discard-comments": "^2.0.4",
     "postcss-loader": "^1.3.3",
     "poststylus": "^0.2.3",
     "rucksack-css": "^0.9.1",
@@ -62,10 +61,5 @@
     "webpack-dev-middleware": "^1.10.1",
     "webpack-hot-middleware": "^2.17.1",
     "webpack-merge": "^4.1.0"
-  },
-  "browserify": {
-    "transform": [
-      "babelify"
-    ]
   }
 }
