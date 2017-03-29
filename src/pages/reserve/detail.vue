@@ -1,6 +1,6 @@
 <template>
   <v-ons-page>
-    <toolbar :back-label="'Page 1'">Page 2</toolbar>
+    <toolbar :back-label="'Reserve'">Reserve Detail</toolbar>
     <p style="text-align: center">This is the second page</p>
   </v-ons-page>
 </template>

@@ -7,6 +7,7 @@ import './directives'
 import './filters'
 
 // Custom style
+import '../../../serra/dist/serra.min.css'
 import './assets/style'
 
 // Router / Store

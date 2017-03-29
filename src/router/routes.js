@@ -1,5 +1,5 @@
 import Home from '../pages/home'
-import Reserve from '../pages/reserve'
+import Splitter from '../pages/splitter'
 
 global.beforeImportJs = (name = '') => {
   // global.logger.log(`begin load js ${name}`, new Date().getTime())
@@ -8,7 +8,8 @@ global.beforeImportJs = (name = '') => {
 
 const routes = [
   { path: '/', name: 'home', component: Home },
-  { path: '/reserve', name: 'reserve', component: Reserve },
+  { path: '/reserve', name: 'reserve', component: Splitter },
+  { path: '/order', name: 'order', component: Splitter },
 
   { path: '*', redirect: '/' }
 

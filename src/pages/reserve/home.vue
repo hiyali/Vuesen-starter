@@ -1,6 +1,6 @@
 <template>
   <v-ons-page>
-    <toolbar>Page 1 (component)</toolbar>
+    <splitter-toolbar title="reserve"></splitter-toolbar>
     <p style="text-align: center">
       <v-ons-button modifier="large" @click="$ons.notification.alert('Hello World!')">Click</v-ons-button>
       <v-ons-button modifier="cta" @click="push">Push</v-ons-button>
@@ -10,14 +10,14 @@
 </template>
 
 <script>
-  import { Toolbar } from '../../components'
+  import { SplitterToolbar } from '../../components'
   import Detail from './detail'
 
   export default {
     name: 'reserve',
     props: ['pageStack'],
     components: {
-      Toolbar
+      SplitterToolbar
     },
     methods: {
       back () {

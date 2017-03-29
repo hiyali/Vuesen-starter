@@ -9,6 +9,7 @@
 
   export default {
     name: 'reserve-navigation',
+    props: ['toggleMenu'],
     components: {
       Home
     },

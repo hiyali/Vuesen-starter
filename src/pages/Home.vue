@@ -1,14 +1,14 @@
 <template>
-  <v-ons-page>
-    <p style="text-align: center">
-      <div>(page)</div>
-      <v-ons-button modifier="large" @click="alertClick">Alert Click</v-ons-button>
-      <v-ons-button modifier="cta" @click="toPage('reserve')">Goto Reserve</v-ons-button>
-    </p>
-    <p>
-      <div class="money">{{ someVal | currency }} (filter)</div>
-      <input class="input" type="text" v-model="someVal" placeholder="Just number (directive)" v-regex-input>
-    </p>
+  <v-ons-page class="text-center">
+    <div class="title">Vuesen starter</div>
+
+    <div class="footer">
+      <v-ons-button @click="toPage('reserve')" class="btn">Loves you</v-ons-button>
+      <div class="info">
+        <p>By signing up, you agree to our </p>
+        <p @click="alertClick"><u>Terms of use</u> and <u>Privacy Policy</u></p>
+      </div>
+    </div>
   </v-ons-page>
 </template>
 
@@ -17,7 +17,6 @@
     name: 'home',
     data () {
       return {
-        someVal: null
       }
     },
     methods: {
@@ -32,12 +31,23 @@
 </script>
 
 <style lang="stylus" scoped>
-  .input
-    border: 1px solid #ddd
-    font-size: 1.5rem
-    line-height: 2rem
-    margin: 3px
-    padding: 2px 5px
-  .money
-    color: green
+
+  @import '../assets/style/mixin'
+
+  .title
+    margin: r(50) 0 0
+    font-size: r(50)
+
+  .footer
+    position: absolute
+    bottom: 0
+    right: 0
+    left: 0
+    .info
+      font-size: r(14)
+      margin: 0 0 r(50)
+    .btn
+      font-size: r(20)
+      margin: 0 0 r(30)
+
 </style>
