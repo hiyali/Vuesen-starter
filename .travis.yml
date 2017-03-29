@@ -1,7 +1,8 @@
 language: node_js
 node_js:
   - "7"
-before_script:
-  - npm i
+# Below order
+# before_script:
+#  - npm i
 script:
-  - npm run build
+  - yarn run build
