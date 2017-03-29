@@ -15,6 +15,13 @@ var AutoPrefixerBrowsers = [
 module.exports = merge(webpackBaseConfig, {
   module: {
     rules: [
+      {
+        test: /\.css$/,
+        use: ExtractTextPlugin.extract({
+          use: [ 'css-loader?-autoprefixer', 'postcss-loader' ],
+          fallback: 'style-loader'
+        })
+      },
 			{
         test: /\.styl$/,
         use: ExtractTextPlugin.extract({

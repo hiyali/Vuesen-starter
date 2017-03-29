@@ -13,6 +13,13 @@ module.exports = merge(webpackBaseConfig, {
   devtool: '#eval-source-map',
   module: {
     rules: [
+      {
+        test: /\.css$/,
+        use: ExtractTextPlugin.extract({
+          use: [ 'css-loader?-autoprefixer' ],
+          fallback: 'style-loader'
+        })
+      },
 			{
         test: /\.styl$/,
         use: ExtractTextPlugin.extract({

@@ -67,13 +67,6 @@ module.exports = {
           }
         ]
       },
-      {
-        test: /\.css$/,
-        use: ExtractTextPlugin.extract({
-          use: [ 'css-loader?-autoprefixer' ],
-          fallback: 'style-loader'
-        })
-      },
       { test: /\.(woff2?|ttf|eot|svg)$/, use: 'file-loader?name=font/[name].[hash:6].[ext]' }
 		]
   },
