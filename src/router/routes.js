@@ -1,5 +1,5 @@
-import Home from '../pages/home'
-import Splitter from '../pages/splitter'
+import Home from '../pages/home.vue' // added ext .vue for travis build
+import Splitter from '../pages/splitter.vue'
 
 global.beforeImportJs = (name = '') => {
   // global.logger.log(`begin load js ${name}`, new Date().getTime())

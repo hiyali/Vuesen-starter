@@ -5,7 +5,7 @@
 </template>
 
 <script>
-  import Home from './home'
+  import Home from './home.vue'
 
   export default {
     name: 'reserve-navigation',
