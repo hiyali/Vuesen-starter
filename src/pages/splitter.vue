@@ -27,7 +27,7 @@
 <script>
   import { mapState, mapMutations } from 'vuex'
   import reserve from './reserve'
-  import order from './order.vue'
+  import order from './order'
 
   export default {
     name: 'siplitter',
