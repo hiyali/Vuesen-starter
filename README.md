@@ -9,12 +9,15 @@
 2. OnsenUI
 3. Webpack 2 (ESLint / ES6 / Stylus / HMR / Proxy / Extract / Minify ...)
 
-Just enjoy.
+## Requirements
 
-## Clone
+* Node >= 7.0.0 (and npm)
+
+## Install
 ```shell
 git clone https://github.com/hiyali/vuesen-starter.git ./your-project-name
 cd ./your-project-name
+npm i # or yarn
 # hala
 ```
 
@@ -23,3 +26,6 @@ cd ./your-project-name
 npm run dev # development
 npm run build # build
 ```
+
+And enjoy.
+
