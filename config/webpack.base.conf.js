@@ -50,6 +50,7 @@ module.exports = {
             loader: 'vue-loader',
             options: {
               loaders: {
+                js: 'babel-loader!eslint-loader',
                 stylus: ExtractTextPlugin.extract({
                   use: ['css-loader', 'stylus-loader'],
                   fallback: 'vue-style-loader' // <- this is a dep of vue-loader, so no need to explicitly install if using npm3
