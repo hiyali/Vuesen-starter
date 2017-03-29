@@ -5,11 +5,19 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin")
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const webpackBaseConfig = require('./webpack.base.conf.js')
 
+var AutoPrefixerBrowsers = [
+  'iOS >= 8.1',
+  'Android >= 4.2',
+  'IE >= 9',
+  'Safari >= 7'
+]
+
 module.exports = merge(webpackBaseConfig, {
   output: {
     filename: "js/[name].[hash:6].min.js"
   },
   plugins: [
+    new webpack.optimize.AggressiveMergingPlugin(),
     new webpack.optimize.UglifyJsPlugin({
       minimize: true,
       beautify: false,
@@ -43,7 +51,12 @@ module.exports = merge(webpackBaseConfig, {
     new stylusLoader.OptionsPlugin({
       default: {
         use: [
-          require('poststylus')([ 'autoprefixer', 'rucksack-css' ])
+          require('poststylus')([
+            require('autoprefixer')({
+              browsers: AutoPrefixerBrowsers
+            }),
+            'rucksack-css'
+          ])
         ],
       },
     }),
@@ -65,6 +78,24 @@ module.exports = merge(webpackBaseConfig, {
         removeAttributeQuotes: true
       },
       chunksSortMode: 'dependency'
+    }),
+    new webpack.LoaderOptionsPlugin({
+      minimize: true,
+      debug: false,
+      options: {
+        postcss: [
+          require('autoprefixer')({
+            browsers: AutoPrefixerBrowsers
+          }),
+          require('postcss-discard-comments')({
+            // removeAllButFirst: true
+            // or
+            remove: function(comment) { return comment[0] != "$"; }
+            // or
+            // removeAll: true
+          })
+        ]
+      }
     })
   ]
 })

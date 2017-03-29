@@ -27,7 +27,6 @@ module.exports = {
   },
   module: {
 		rules: [
-      { test: /\.html$/, loader: 'html-loader' },
       {
         enforce: 'pre',
         test: /\.(js|vue)$/,
@@ -41,7 +40,7 @@ module.exports = {
           cache: false,
         }
       },
-			{ test: /\.styl$/, use: ExtractTextPlugin.extract({ fallback: 'style-loader', use: [ 'css-loader', 'stylus-loader', ] }) },
+      { test: /\.html$/, loader: 'html-loader' },
 			{ test: /\.png$/, use: 'file-loader?name=img/[name].[hash:6].[ext]' },
 			{
         test: /\.js$/,
@@ -52,15 +51,22 @@ module.exports = {
         exclude: /node_modules/
       },
 			{
+        test: /\.styl$/,
+        use: ExtractTextPlugin.extract({
+          use: [ 'css-loader?-autoprefixer', 'postcss-loader', 'stylus-loader' ],
+          fallback: 'style-loader'
+        })
+      },
+			{
         test: /\.vue$/,
         use: [
           {
             loader: 'vue-loader',
             options: {
               loaders: {
-                js: 'babel-loader!eslint-loader',
+                js: 'babel-loader',
                 stylus: ExtractTextPlugin.extract({
-                  use: ['css-loader', 'stylus-loader'],
+                  use: ['css-loader?-autoprefixer', 'stylus-loader'],
                   fallback: 'vue-style-loader' // <- this is a dep of vue-loader, so no need to explicitly install if using npm3
                 })
               }
@@ -68,7 +74,13 @@ module.exports = {
           }
         ]
       },
-      { test: /\.css$/, use: ExtractTextPlugin.extract({ fallback: 'style-loader', use: [ 'css-loader' ] }) },
+      {
+        test: /\.css$/,
+        use: ExtractTextPlugin.extract({
+          use: [ 'css-loader?-autoprefixer', 'postcss-loader' ],
+          fallback: 'style-loader'
+        })
+      },
       { test: /\.(woff2?|ttf|eot|svg)$/, use: 'file-loader?name=font/[name].[hash:6].[ext]' }
 		]
   },
