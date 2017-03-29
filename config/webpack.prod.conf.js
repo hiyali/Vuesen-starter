@@ -13,6 +13,17 @@ var AutoPrefixerBrowsers = [
 ]
 
 module.exports = merge(webpackBaseConfig, {
+  module: {
+    rules: [
+			{
+        test: /\.styl$/,
+        use: ExtractTextPlugin.extract({
+          use: [ 'css-loader?-autoprefixer', 'postcss-loader', 'stylus-loader' ],
+          fallback: 'style-loader'
+        })
+      },
+    ]
+  },
   output: {
     filename: "js/[name].[hash:6].min.js"
   },

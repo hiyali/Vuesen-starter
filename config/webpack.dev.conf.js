@@ -11,6 +11,17 @@ Object.keys(webpackBaseConfig.entry).forEach(function (name) {
 
 module.exports = merge(webpackBaseConfig, {
   devtool: '#eval-source-map',
+  module: {
+    rules: [
+			{
+        test: /\.styl$/,
+        use: ExtractTextPlugin.extract({
+          use: [ 'css-loader?-autoprefixer', 'stylus-loader' ],
+          fallback: 'style-loader'
+        })
+      }
+    ]
+  },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new ExtractTextPlugin({

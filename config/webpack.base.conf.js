@@ -51,13 +51,6 @@ module.exports = {
         exclude: /node_modules/
       },
 			{
-        test: /\.styl$/,
-        use: ExtractTextPlugin.extract({
-          use: [ 'css-loader?-autoprefixer', 'postcss-loader', 'stylus-loader' ],
-          fallback: 'style-loader'
-        })
-      },
-			{
         test: /\.vue$/,
         use: [
           {
@@ -77,7 +70,7 @@ module.exports = {
       {
         test: /\.css$/,
         use: ExtractTextPlugin.extract({
-          use: [ 'css-loader?-autoprefixer', 'postcss-loader' ],
+          use: [ 'css-loader?-autoprefixer' ],
           fallback: 'style-loader'
         })
       },
