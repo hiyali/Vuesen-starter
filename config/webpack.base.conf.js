@@ -44,6 +44,14 @@ module.exports = {
 			{ test: /\.styl$/, use: ExtractTextPlugin.extract({ fallback: 'style-loader', use: [ 'css-loader', 'stylus-loader', ] }) },
 			{ test: /\.png$/, use: 'file-loader?name=img/[name].[hash:6].[ext]' },
 			{
+        test: /\.js$/,
+        use: 'babel-loader',
+        include: [
+          path.join(__dirname, '../src')
+        ],
+        exclude: /node_modules/
+      },
+			{
         test: /\.vue$/,
         use: [
           {
