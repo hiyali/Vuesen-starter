@@ -1,5 +1,4 @@
-import Home from '../pages/home'
-import Splitter from '../pages/splitter'
+import Login from '../pages/login'
 
 global.beforeImportJs = (name = '') => {
   // global.logger.log(`begin load js ${name}`, new Date().getTime())
@@ -7,11 +6,10 @@ global.beforeImportJs = (name = '') => {
 }
 
 const routes = [
-  { path: '/', name: 'home', component: Home },
-  { path: '/reserve', name: 'reserve', component: Splitter },
-  { path: '/order', name: 'order', component: Splitter },
+  { path: '/login', name: 'login', component: Login },
 
-  { path: '*', redirect: '/' }
+  { path: '*', redirect: '/login' },
+  { path: '/', redirect: '/login' }
 
     /*
      * For lazyload

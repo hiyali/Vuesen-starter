@@ -4,9 +4,7 @@
     "build": "node config/build.js"
   },
   "dependencies": {
-    "onsenui": "^2.2.0",
     "vue": "^2.2.6",
-    "vue-onsenui": "^2.0.0-alpha.1",
     "vue-resource": "^1.2.1",
     "vue-router": "^2.3.0",
     "vuex": "^2.2.1",
@@ -14,9 +12,9 @@
   },
   "name": "Vuesen-starter",
   "version": "0.1.0",
-  "description": "A onsenui and vuejs starter",
+  "description": "A starter for Vuejs 2 and Webpack 2",
   "main": "index.js",
-  "repository": "https://github.com/hiyali/Vuesen-starter.git",
+  "repository": "https://github.com/hiyali/vue2-webpack2-starter.git",
   "author": "Salam Hiyali",
   "license": "MIT",
   "devDependencies": {
