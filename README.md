@@ -1,7 +1,8 @@
 # vue2-webpack2-starter
 ❤️ A starter for Vue2 and Webpack2
 
-[![travis build](https://img.shields.io/travis/hiyali/Vuesen-starter/master.svg)](https://travis-ci.org/hiyali/Vuesen-starter) [![CircleCI Status](https://circleci.com/gh/hiyali/Vuesen-starter.svg?style=shield)](https://circleci.com/gh/hiyali/Vuesen-starter)
+[![travis build](https://img.shields.io/travis/hiyali/vue2-webpack2-starter/master.svg)](https://travis-ci.org/hiyali/vue2-webpack2-starter)
+[![CircleCI Status](https://circleci.com/gh/hiyali/vue2-webpack2-starter.svg?style=shield)](https://circleci.com/gh/hiyali/vue2-webpack2-starter)
 
 ## Includes
 
