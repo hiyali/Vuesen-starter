@@ -10,7 +10,7 @@
     "vuex": "^2.2.1",
     "vuex-router-sync": "^4.1.2"
   },
-  "name": "Vuesen-starter",
+  "name": "vue2-webpack2-starter",
   "version": "0.1.0",
   "description": "A starter for Vuejs 2 and Webpack 2",
   "main": "index.js",

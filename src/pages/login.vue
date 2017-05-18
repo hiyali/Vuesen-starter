@@ -9,7 +9,7 @@
   import { mapState, mapMutations } from 'vuex'
 
   export default {
-    name: 'siplitter',
+    name: 'login',
     data () {
       return {
         pages: [
