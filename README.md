@@ -15,7 +15,7 @@
 
 ## Install
 ```shell
-git clone https://github.com/hiyali/vuesen-starter.git ./your-project-name
+git clone https://github.com/hiyali/vue2-webpack2-starter.git ./your-project-name
 cd ./your-project-name
 npm i # or yarn
 # hala
