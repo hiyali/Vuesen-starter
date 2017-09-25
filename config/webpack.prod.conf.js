@@ -18,15 +18,30 @@ module.exports = merge(webpackBaseConfig, {
       {
         test: /\.css$/,
         use: ExtractTextPlugin.extract({
-          use: [ 'css-loader?-autoprefixer', 'postcss-loader' ],
-          fallback: 'style-loader'
+          fallback: 'style-loader',
+          use: [
+            // 'css-loader?-autoprefixer',
+            {
+              loader: 'css-loader',
+              options : { autoprefixer: false, sourceMap: true, importLoaders: true }
+            },
+            'postcss-loader'
+          ]
         })
       },
 			{
         test: /\.styl$/,
         use: ExtractTextPlugin.extract({
-          use: [ 'css-loader?-autoprefixer', 'postcss-loader', 'stylus-loader' ],
-          fallback: 'style-loader'
+          fallback: 'style-loader',
+          use: [
+            // 'css-loader?-autoprefixer',
+            {
+              loader: 'css-loader',
+              options : { autoprefixer: false, minimize: true, sourceMap: true, importLoaders: true }
+            },
+            'postcss-loader',
+            'stylus-loader'
+          ]
         })
       },
     ]

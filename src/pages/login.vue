@@ -1,5 +1,5 @@
 <template>
-  <div class="some">
+  <div class="some flex">
     haha
     {{ pages }}
   </div>
@@ -38,5 +38,12 @@
 <style lang="stylus" scoped>
 
   @import '../assets/style/mixin'
+
+  .some
+    font-size r(20)
+  .flex
+    display flex // check autoprefixer
+    align-items center
+    height r(200)
 
 </style>
